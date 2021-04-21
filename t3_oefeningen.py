@@ -2,6 +2,12 @@ from math import pi
 
 
 def bmi(gewicht, lengte):
+    if lengte <= 0:
+        return -1
+    if gewicht <=0:
+        return -1
+    if lengte == 0:
+        return -1
     resultaat = gewicht / lengte **2
     return resultaat
 

@@ -51,3 +51,19 @@ def test_bmi_ondergewicht():
 def test_bmi_overgewicht():
     resultaat = bmi(90, 1.835)
     assert abs(resultaat - 26.7) < 0.5
+
+
+
+def test_bmi_negatief_gewicht():
+    resultaat = bmi(-1, 1.835)
+    assert resultaat == -1
+
+
+def test_bmi_negatieve_lengte():
+    resultaat = bmi(80, -1.835)
+    assert resultaat == -1
+
+
+def test_bmi_0_lengte():
+    resultaat = bmi(80, 0)
+    assert resultaat == -1
