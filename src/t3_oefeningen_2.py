@@ -1,30 +1,34 @@
-# import math
-
+from math import pi
 
 def is_even(x):
-    """Geef True als x even is, anders False"""
-    return True
+    result = x % 2
+    if result == 0:
+        return True
+    else:
+        return False
 
 
 def is_oneven(x):
-    """Geef True als x oneven is, anders False"""
-    # Implementeer deze functie gebruik makend van is_even
-    return True
+    resultaat = is_even(x)
+    if resultaat == False:
+        return True
+    else:
+        return False
 
 
 def volume_bol(r):
-    """Return volume bol met straal r"""
-    return 0
+    result = 4/3 * pi * r **3
+    return result
 
 
 def oppervlakte_cirkel(r):
-    """Return oppervlakte cirkel met straal r"""
+    result = r**2 * pi 
     # Deze functie kan je gebruiken om het volume van de donut te berekenen.
-    return 0
+    return result
 
 
 def omtrek_cirkel(r):
-    """Return omtrek cirkel met straal r"""
+    result = 2 * r * pi
     # Deze functie kan je gebruiken om het volume van de donut te berekenen.
     return 0
 
