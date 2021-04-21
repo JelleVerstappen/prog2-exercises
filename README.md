@@ -20,7 +20,7 @@ Om de testen uit te voeren dienen jullie pytest
 te installeren:
 
 ```bash
-pip install pytest black
+pip install pytest pytest-cov coverage black
 ```
 
 Nadien kunnen jullie de testen als volgt uitvoeren:
