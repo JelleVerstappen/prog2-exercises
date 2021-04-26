@@ -9,8 +9,8 @@ def is_even(x):
 
 
 def is_oneven(x):
-    resultaat = is_even(x)
-    if resultaat == False:
+    result = is_even(x)
+    if result == False:
         return True
     else:
         return False
@@ -30,21 +30,26 @@ def oppervlakte_cirkel(r):
 def omtrek_cirkel(r):
     result = 2 * r * pi
     # Deze functie kan je gebruiken om het volume van de donut te berekenen.
-    return 0
+    return result
 
 
 def volume_donut(r, R):
-    """Return volume donut met straal r en R
-    waarbij r de dikte van de donut is, en R
-    de grootte van de donut.
-    """
-    return 0
+    if r <= 0:
+        return -1
+    if R <= 0:
+        return -1
+    if r == R:
+        return -1 
+    result = 2 * pi**2 * r**2 * R
+    return result
 
 
 def stats(punten):
-    """Return het gemiddelde, het maximum, het minimum en het aantal getallen
-    als een lijst met punten gegeven werd."""
-    return 0
+    gemiddelde = sum(punten) / len(punten)
+    maximum = max(punten)
+    minimum = min(punten)
+    nr = len(punten) 
+    return gemiddelde, maximum, minimum, nr
 
 
 class Cirkel:
@@ -52,16 +57,16 @@ class Cirkel:
         self.straal = r
 
     def omtrek(self):
-        """Return de omtrek van de cirkel met straal r"""
-        return 0
+        omtrek = self.straal * 2 * pi
+        return omtrek
 
     def oppervlakte(self):
-        """Return de oppervlakte van de cirkel met straal r"""
-        return 0
+        oppervlakte = self.straal **2 * pi
+        return oppervlakte
 
     def __str__(self):
-        """Return een string zoals aangegeven in de testen"""
-        return ""
+        x = Cirkel(r)
+        return f"Een cirkel met straal {self.straal}"
 
 
 def pythagoras(a, b):
