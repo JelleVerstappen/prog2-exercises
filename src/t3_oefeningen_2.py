@@ -1,4 +1,5 @@
-from math import pi
+from math import pi 
+from math import sqrt
 
 def is_even(x):
     result = x % 2
@@ -65,17 +66,21 @@ class Cirkel:
         return oppervlakte
 
     def __str__(self):
-        x = Cirkel(r)
-        return f"Een cirkel met straal {self.straal}"
+        return f"cirkel met straal {self.straal}"
 
 
 def pythagoras(a, b):
-    """Return de lengte van de schuine zijde als de lengtes
-    van de rechthoekszijden gegeven zijn door a en b"""
-    return 0
+    if a <= 0:
+        return -1
+    if b <= 0:
+        return -1    
+    c = sqrt(a**2 + b**2) 
+    return c
 
 
 def is_palindroom(woord):
-    """Return True als het omgekeerde van het woord gelijk
-    is aan het woord zelf. Return anders False."""
-    return True
+    backwards = woord[::-1]
+    if backwards == woord:
+        return True
+    else:
+        return False
