@@ -9,7 +9,16 @@ def is_prime(x):
     https://nl.wikipedia.org/wiki/Priemgetal
     https://www.eff.org/press/archives/2009/10/14-0
     """
-    return 0
+    if (x > 1):
+        for i in range(2, x):
+            if (x % i)!=0:
+                return True
+            else:
+                return False
+    else:
+        return False
+    if x == 2:
+        return True
 
 
 def fibonacci(n):
@@ -29,7 +38,13 @@ def fibonacci(n):
 
     https://nl.wikipedia.org/wiki/Rij_van_Fibonacci
     """
-    return 0
+    if n == 1:
+       return 0
+    elif n == 2 or n == 3:
+        return 1
+    else:
+        return fibonacci(n-2) + fibonacci(n-1)
+
 
 
 def rekeningnummer_controlegetal(n):
@@ -41,7 +56,8 @@ def rekeningnummer_controlegetal(n):
     Voor het rekeningnummer van Touring is dit bijvoorbeeld 49:
     068-9099786-49
     """
-    return 0
+    last = int(n[-2:])
+    return last
 
 
 def rekeningnummer_hoofdgetal(n):
@@ -56,7 +72,9 @@ def rekeningnummer_hoofdgetal(n):
     Voor het rekeningnummer van Telenet is dit bijvoorbeeld:
     Gegeven 405-0504611-48, dient het resultaat 4050504611 te zijn.
     """
-    return 0
+    nummer = n.replace("-", "") 
+    hoofdgetal = int(nummer[0: len(nummer)-2])
+    return hoofdgetal
 
 
 def is_geldig_rekeningnummer(n):
@@ -73,7 +91,11 @@ def is_geldig_rekeningnummer(n):
     Gegeven 405-0504611-48, dient de rest bij deling van 4050504611 door 97
     48 te zijn.
     """
-    return 0
+    control = rekeningnummer_hoofdgetal(n) % 97
+    if control == rekeningnummer_controlegetal(n):
+        return True
+    else:    
+        return False
 
 
 def is_anagram(word1, word2):
@@ -101,4 +123,16 @@ def is_anagram(word1, word2):
 
     https://nl.wikipedia.org/wiki/Anagram
     """
-    return 0
+    Lower1 = word1.lower()
+    Lower2 = word2.lower()
+
+    NoSpace1 = Lower1.replace(" ", "")
+    NoSpace2 = Lower2.replace(" ","")
+
+    order1 = sorted(NoSpace1)
+    order2 = sorted(NoSpace2)
+    
+    if order1 == order2:
+        return True
+    else: 
+        return False
